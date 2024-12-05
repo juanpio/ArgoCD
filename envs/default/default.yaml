@@ -13,4 +13,4 @@ spec:
     directory:
       recurse: true
     path: envs/default
-    repoURL: 
+    repoURL: https://github.com/juanpio/ArgoCD
