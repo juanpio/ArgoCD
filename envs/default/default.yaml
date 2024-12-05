@@ -15,3 +15,9 @@ spec:
     path: envs/default
     targetRevision: main
     repoURL: https://github.com/juanpio/ArgoCD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
