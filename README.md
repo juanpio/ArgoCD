@@ -10,22 +10,46 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 Install the CLI 
 
-`` brew install argocd ``
+````
+brew install argocd
+````
 
-Trafffic to the port 
+Start trafffic to the port 
 
-`` kubectl port-forward svc/argocd-server -n argocd 8080:443 ``
-`` open -a "Google Chrome" http://localhost:8080 ``
+````
+kubectl port-forward svc/argocd-server -n argocd 8080:443 
+````
 
-Get the initial password for admin
-`` argocd admin initial-password -n argocd ``
-one time admin password: o1jiQcFTden1kbjr
+Open a browser with the Argo UI Admin
 
-We have to set the repository public or setup a repo access by using GitHubApp registration.
+```` 
+open -a "Google Chrome" http://localhost:8080 
+````
+
+Get the initial password for admin, one time admin password: o1jiQcFTden1kbjr
+````
+argocd admin initial-password -n argocd 
+````
 
 Then use this command to check the status of the kubernetes cluster for argocd namespace.
-
 ````
 kubectl get Applications -n argocd
 ````
+
+We can check the PODs status by namespace with the command
+````
+kubectl get po -n argocd
+kubectl get po -n redis
+````
+
+##
+## Git Repo Set ups
+Each proyect has to have set the repository as public OR setup a repo access by using GitHubApp registration.
+
+### GitHub Apps
+To use a Git Hub App you need to have an Organization, then go to: 
+-- settings -> Developer Setting -> GitApp
+
+The you will have to registe an up which will required a public url among other set up that I did not cover here.
+
 
