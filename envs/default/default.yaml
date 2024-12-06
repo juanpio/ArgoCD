@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  generateName: default
+  name: default
   namespace: argocd
 spec:
   destination:
