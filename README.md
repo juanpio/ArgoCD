@@ -20,3 +20,12 @@ Trafffic to the port
 Get the initial password for admin
 `` argocd admin initial-password -n argocd ``
 one time admin password: o1jiQcFTden1kbjr
+
+We have to set the repository public or setup a repo access by using GitHubApp registration.
+
+Then use this command to check the status of the kubernetes cluster for argocd namespace.
+
+````
+kubectl get Applications -n argocd
+````
+
