@@ -16,8 +16,12 @@ spec:
     targetRevision: main
     repoURL: https://github.com/juanpio/ArgoCD
   syncPolicy:
+
     automated:
       prune: true
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+    - Validate=false
+    - ApplyOutOfSyncOnly=true
+    
